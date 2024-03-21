@@ -23,7 +23,7 @@ const SearchInput = () => {
         <FormInput
           name={form.names.search}
           placeholder="Search by Name, Region, Subregion"
-          className="w-full min-w-[20rem] py-3 pl-12 pr-4 outline text-sm text-white rounded-xl outline-none bg-[#282B30] focus:outline-[#6C727F] font-sans placeholder:text-[#6C727F] placeholder:font-semibold placeholder:text-[0.8rem]"
+          className="search-input"
         />
       </div>
     </Form>

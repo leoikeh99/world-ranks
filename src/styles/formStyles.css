@@ -1,3 +1,35 @@
+.label{
+    @apply text-[#6C727F] text-xs font-bold mb-2 block
+}
+
+.search-input{
+    @apply w-full min-w-[20rem] py-3 pl-12 pr-4 outline text-sm text-white rounded-xl outline-none bg-[#282B30] focus:outline-[#6C727F] font-sans placeholder:text-[#6C727F] placeholder:font-semibold placeholder:text-[0.8rem]
+}
+
+.select-button{
+    @apply flex items-center justify-between w-full text-[#D2D5DA] border-[2px] border-[#282B30] rounded-xl p-3 text-sm font-semibold focus:border-[#6C727F] outline-none
+}
+
+.select-popover{
+    @apply bg-[#1B1D1F] text-[#D2D5DA] text-sm border-[2px] border-[#282B30] rounded-xl p-1 focus:border-[#6C727F] outline-none
+}
+
 .select-item{
     @apply p-3 rounded-lg data-[active-item]:bg-[#282B30]
+}
+
+.choose-regions{
+    @apply flex flex-wrap gap-3
+}
+
+.choose-regions .checkbox{
+    @apply sr-only
+}
+
+.choose-regions .checkbox + label{
+    @apply font-semibold text-[#6C727F] text-sm px-3 py-2 rounded-xl cursor-pointer inline-block
+}
+
+.choose-regions .checkbox:checked + label{
+    @apply bg-[#282B30] text-[#D2D5DA] font-medium
 }
