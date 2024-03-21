@@ -1,0 +1,33 @@
+import { Form, FormInput, useFormStore } from "@ariakit/react";
+
+const SearchInput = () => {
+  const form = useFormStore({ defaultValues: { search: "" } });
+
+  return (
+    <Form store={form}>
+      <div className="relative">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute top-0 bottom-0 w-5 h-5 my-auto text-gray-400 left-3"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+        <FormInput
+          name={form.names.search}
+          placeholder="Search by Name, Region, Subregion"
+          className="w-full min-w-[20rem] py-3 pl-12 pr-4 outline text-sm text-white rounded-xl outline-none bg-[#282B30] focus:outline-[#6C727F] font-sans placeholder:text-[#6C727F] placeholder:font-semibold placeholder:text-[0.8rem]"
+        />
+      </div>
+    </Form>
+  );
+};
+
+export default SearchInput;
