@@ -1,8 +1,18 @@
 import { Form, FormInput, useFormStore } from "@ariakit/react";
+import { useSearchParams } from "react-router-dom";
 
 const SearchInput = () => {
   const form = useFormStore({ defaultValues: { search: "" } });
+  const [searchParams, setSearchParams] = useSearchParams();
 
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+
+    setSearchParams((prevParams) => {
+      prevParams.set("search", value);
+      return prevParams;
+    });
+  };
   return (
     <Form store={form}>
       <div className="relative">
@@ -22,6 +32,8 @@ const SearchInput = () => {
         </svg>
         <FormInput
           name={form.names.search}
+          value={searchParams.get("search") || ""}
+          onChange={handleInputChange}
           placeholder="Search by Name, Region, Subregion"
           className="search-input"
         />

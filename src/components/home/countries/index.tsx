@@ -24,7 +24,7 @@ const Countries = () => {
       </thead>
       <tbody className="tbody">
         <tr className="relative hover:bg-[#282B30]">
-          <td className="py-5">
+          <td className="py-2.5">
             <img
               src="https://flagcdn.com/w320/cy.png"
               alt="flag"
