@@ -33,3 +33,37 @@
 .choose-regions .checkbox:checked + label{
     @apply bg-[#282B30] text-[#D2D5DA] font-medium
 }
+
+.choose-regions .checkbox:focus + label{
+    @apply outline outline-[#6C727F]
+}
+
+.choose-status{
+    
+}
+
+.choose-status label{
+    @apply flex flex-row-reverse items-center justify-end gap-2 text-[#D2D5DA] text-sm font-semibold cursor-pointer
+}
+
+.choose-status .checkbox{
+   @apply sr-only
+}
+
+.choose-status .checkbox + span{
+    @apply h-6 w-6 bg-[#1B1D1F] outline outline-[3px] outline-[#6C727F] rounded-sm relative
+ }
+
+ .choose-status .checkbox + span::after{
+    content: ""; 
+    border-width: 0 3px 3px 0;
+    @apply absolute top-[5px] left-[9px] w-[5px] h-[10px] border-white rotate-45 hidden
+ }
+
+ .choose-status .checkbox:checked + span{
+    @apply bg-[#4E80EE] outline-none
+ }
+
+ .choose-status .checkbox:checked + span::after{ 
+    @apply block
+ }
