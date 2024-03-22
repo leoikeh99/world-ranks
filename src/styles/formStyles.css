@@ -43,7 +43,7 @@
 }
 
 .choose-status label{
-    @apply flex flex-row-reverse items-center justify-end gap-2 text-[#D2D5DA] text-sm font-semibold cursor-pointer
+    @apply flex flex-row-reverse items-center justify-end gap-3 text-[#D2D5DA] text-sm font-semibold cursor-pointer
 }
 
 .choose-status .checkbox{

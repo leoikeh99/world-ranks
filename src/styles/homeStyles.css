@@ -1,0 +1,17 @@
+.tbody{
+    @apply relative
+}
+
+.tbody::before{
+    content:"";
+    display:block;
+    line-height:1.25rem;
+    text-indent:-99999px;
+    @apply w-full border-[1px] border-[#282B30] absolute top-0 left-0
+}
+
+.table{
+    /* border-collapse: separate; 
+    border-spacing: 0 25px; */
+    @apply w-full
+}
