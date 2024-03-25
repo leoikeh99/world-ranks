@@ -1,7 +1,6 @@
 import { Checkbox } from "@ariakit/react";
 import { REGIONS } from "@/constants";
 import { useSearchParams } from "react-router-dom";
-import { useEffect } from "react";
 
 const ChooseRegions = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -9,11 +8,11 @@ const ChooseRegions = () => {
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
 
-    const selectedRegions = searchParams.get("region")?.split(",") || [];
+    const selectedRegions = searchParams.get("regions")?.split(",") || [];
 
     setSearchParams((prevParams) => {
       prevParams.set(
-        "region",
+        "regions",
         selectedRegions.includes(name)
           ? selectedRegions.filter((region) => region !== name).join(",")
           : [...selectedRegions, name].join(",")
@@ -34,7 +33,7 @@ const ChooseRegions = () => {
               value={region}
               className="checkbox"
               onChange={handleCheck}
-              checked={searchParams.get("region")?.split(",").includes(region)}
+              checked={searchParams.get("regions")?.split(",").includes(region)}
             />
             <label htmlFor={region}>{region}</label>
           </span>

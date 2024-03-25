@@ -15,3 +15,11 @@
     border-spacing: 0 25px; */
     @apply w-full
 }
+
+.table-head{
+    @apply text-[#6C727F] text-sm text-left font-semibold py-5
+}
+
+.table-desc{
+    @apply text-[#D2D5DA] font-medium py-3.5
+}

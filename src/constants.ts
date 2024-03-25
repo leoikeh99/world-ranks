@@ -6,3 +6,5 @@ export const REGIONS = [
   "Europe",
   "Oceania",
 ];
+
+export const SORTS = ["population", "region", "area"];

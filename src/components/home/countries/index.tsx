@@ -1,44 +1,82 @@
-import { Link } from "react-router-dom";
+import { Country } from "@/types";
+import { useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
+import Pagination from "../Pagination";
+import CountryItem from "./CountryItem";
+import Loading from "./Loading";
 
-const Countries = () => {
+const Countries = ({
+  countries,
+  loading,
+}: {
+  countries: Array<Country>;
+  loading: boolean;
+}) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const changePage = (selectedItem: { selected: number }) => {
+    setSearchParams((prevParams) => {
+      prevParams.set("page", (selectedItem.selected + 1).toString());
+      return prevParams;
+    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const getPage = (searchParams: URLSearchParams) => {
+    const pageParams = searchParams.get("page");
+    let page = isNaN(Number(pageParams))
+      ? 1
+      : pageParams
+      ? Number(pageParams)
+      : 1;
+
+    const pageCount = Math.ceil(countries.length / 15);
+    if (page > pageCount) page = pageCount;
+
+    return page;
+  };
+
+  const paginatedCountries = useMemo(() => {
+    const page = getPage(searchParams);
+    return countries.slice((page - 1) * 15, page * 15);
+  }, [searchParams.get("page"), countries]);
+
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th className="text-[#6C727F] text-sm text-left font-semibold py-5">
-            Flag
-          </th>
-          <th className="text-[#6C727F] text-sm text-left font-semibold">
-            Name
-          </th>
-          <th className="text-[#6C727F] text-sm text-left font-semibold">
-            Population
-          </th>
-          <th className="text-[#6C727F] text-sm text-left font-semibold">
-            Area (km <sup>2</sup>)
-          </th>
-          <th className="text-[#6C727F] text-sm text-left font-semibold">
-            Region
-          </th>
-        </tr>
-      </thead>
-      <tbody className="tbody">
-        <tr className="relative hover:bg-[#282B30]">
-          <td className="py-2.5">
-            <img
-              src="https://flagcdn.com/w320/cy.png"
-              alt="flag"
-              className="w-16 h-11 rounded-md object-cover"
-            />
-            <Link to="/country/1" className="absolute inset-0" />
-          </td>
-          <td className="text-[#D2D5DA] font-medium">United States</td>
-          <td className="text-[#D2D5DA] font-medium">1,402,112,000</td>
-          <td className="text-[#D2D5DA] font-medium">9,706,961</td>
-          <td className="text-[#D2D5DA] font-medium">Asia</td>
-        </tr>
-      </tbody>
-    </table>
+    <div>
+      <table className="table">
+        <thead>
+          <tr>
+            <th className="table-head">Flag</th>
+            <th className="table-head">Name</th>
+            <th className="table-head">Population</th>
+            <th className="table-head">
+              Area (km <sup>2</sup>)
+            </th>
+            <th className="table-head hidden lg:block">Region</th>
+          </tr>
+        </thead>
+        <tbody className="tbody">
+          {!loading ? (
+            <>
+              {paginatedCountries.map((country, index) => (
+                <CountryItem
+                  key={country.name.common}
+                  country={country}
+                  index={index}
+                />
+              ))}
+            </>
+          ) : (
+            <Loading />
+          )}
+        </tbody>
+      </table>
+      <Pagination
+        pageCount={Math.ceil(countries.length / 15)}
+        forcePage={getPage(searchParams) - 1}
+        onPageChange={changePage}
+      />
+    </div>
   );
 };
 
