@@ -12,16 +12,16 @@ const Pagination = ({ pageCount, forcePage, onPageChange }: Props) => {
       pageCount={pageCount}
       forcePage={forcePage}
       onPageChange={onPageChange}
-      breakLabel={<img src="/src/assets/three-dots.svg" />}
+      breakLabel={<img src="/src/assets/three-dots.svg" className="scale-75" />}
       nextLabel={<img src="/src/assets/chevron-right.svg" />}
       previousLabel={<img src="/src/assets/chevron-left.svg" />}
       renderOnZeroPageCount={null}
-      containerClassName="flex flex-wrap gap-3 mt-10 justify-end"
-      pageLinkClassName="w-8 h-8 rounded-md bg-[#282B30] text-[#D2D5DA] font-semibold flex items-center justify-center"
-      activeLinkClassName="outline outline-2 outline-[#D2D5DA]"
-      previousClassName="w-8 h-8 rounded-md bg-[#282B30] text-[#D2D5DA] font-semibold flex items-center justify-center"
-      nextClassName="w-8 h-8 rounded-md bg-[#282B30] text-[#D2D5DA] font-semibold flex items-center justify-center"
-      breakClassName="w-10 h-8 rounded-md bg-[#282B30] text-[#D2D5DA] font-semibold flex items-center justify-center"
+      containerClassName="pagination-container"
+      pageLinkClassName="pagination-link"
+      activeLinkClassName="pagination-active"
+      previousClassName="pagination-link"
+      nextClassName="pagination-link"
+      breakClassName="pagination-link w-10 h-7 xxs:h-8"
     />
   );
 };

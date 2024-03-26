@@ -41,7 +41,7 @@ function Home() {
 
   return (
     <div className="sm:max-w-[min(1270px,95%)] mx-auto pb-5">
-      <div className="relative bg-[#1B1D1F] border border-[#282B30] sm:-mt-12 sm:rounded-xl py-5 px-8">
+      <div className="relative bg-[#1B1D1F] border border-[#282B30] sm:-mt-12 sm:rounded-xl py-5 px-4 xs:px-8">
         <div className="sm:flex items-center justify-between mb-10">
           <p className="text-[#6C727F] font-semibold mb-3 sm:mb-0">
             Found {filteredCountries.length} countries

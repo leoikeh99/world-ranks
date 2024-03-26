@@ -48,8 +48,8 @@ const Countries = ({
           <tr>
             <th className="table-head">Flag</th>
             <th className="table-head">Name</th>
-            <th className="table-head">Population</th>
-            <th className="table-head">
+            <th className="table-head hidden xs:block">Population</th>
+            <th className="table-head hidden xxs:table-cell">
               Area (km <sup>2</sup>)
             </th>
             <th className="table-head hidden lg:block">Region</th>

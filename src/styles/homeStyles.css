@@ -21,5 +21,17 @@
 }
 
 .table-desc{
-    @apply text-[#D2D5DA] font-medium py-3.5
+    @apply text-[#D2D5DA] text-sm xxs:text-base font-medium py-3.5 pr-4 xxs:pr-2.5 
+}
+
+.pagination-container{
+    @apply flex flex-wrap gap-2 xxs:gap-3 mt-10 justify-end
+}
+
+.pagination-link{
+    @apply w-7 h-7 xxs:w-8 xxs:h-8 text-sm xxs:text-base rounded-md bg-[#282B30] text-[#D2D5DA] font-semibold flex items-center justify-center
+}
+
+.pagination-active{
+    @apply outline outline-2 outline-[#D2D5DA]
 }

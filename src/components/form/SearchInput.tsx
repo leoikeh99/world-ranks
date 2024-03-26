@@ -35,7 +35,7 @@ const SearchInput = () => {
           value={searchParams.get("search") || ""}
           onChange={handleInputChange}
           placeholder="Search by Name, Region, Subregion"
-          className="search-input  max-w-[22rem]"
+          className="search-input"
         />
       </div>
     </Form>

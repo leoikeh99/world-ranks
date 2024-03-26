@@ -3,7 +3,7 @@
 }
 
 .search-input{
-    @apply w-full min-w-[20rem] py-3 pl-12 pr-4 outline text-sm text-white rounded-xl outline-none bg-[#282B30] focus:outline-[#6C727F] font-sans placeholder:text-[#6C727F] placeholder:font-semibold placeholder:text-[0.8rem]
+    @apply w-full xs:min-w-[20rem] max-w-[22rem] py-3 pl-12 pr-4 outline text-sm text-white rounded-xl outline-none bg-[#282B30] focus:outline-[#6C727F] font-sans placeholder:text-[#6C727F] placeholder:font-semibold placeholder:text-[0.8rem]
 }
 
 .select-button{

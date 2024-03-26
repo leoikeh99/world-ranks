@@ -6,6 +6,10 @@ export default {
       fontFamily: {
         sans: ["Be Vietnam Pro", "sans-serif"],
       },
+      screens: {
+        xs: "550px",
+        xxs: "350px",
+      },
     },
   },
   plugins: [],
