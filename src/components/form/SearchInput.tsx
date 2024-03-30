@@ -8,10 +8,13 @@ const SearchInput = () => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
 
-    setSearchParams((prevParams) => {
-      prevParams.set("search", value);
-      return prevParams;
-    });
+    setSearchParams(
+      (prevParams) => {
+        prevParams.set("search", value);
+        return prevParams;
+      },
+      { replace: true }
+    );
   };
   return (
     <Form store={form}>

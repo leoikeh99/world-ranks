@@ -16,11 +16,18 @@ function Home() {
   const filters = getFiltersObject(paramsToObject(searchParams.entries()));
 
   const getCountries = async () => {
+    setError(false);
     setLoading(true);
+    document.title = "World Ranks | Home";
     try {
       const response = await fetch(
         `https://restcountries.com/v3.1/all?fields=name,flags,region,population,area,unMember,independent,cioc`
       );
+      if (!response.ok) {
+        setError(true);
+        setLoading(false);
+        return;
+      }
       const data = await response.json();
       setCountries(data);
       setError(false);
@@ -56,7 +63,7 @@ function Home() {
             {!error ? (
               <Countries countries={filteredCountries} loading={loading} />
             ) : (
-              <Error />
+              <Error retry={getCountries} />
             )}
           </div>
         </div>

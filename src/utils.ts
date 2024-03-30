@@ -1,4 +1,4 @@
-import { REGIONS, SORTS } from "./constants";
+import { REGIONS } from "./constants";
 import { Country, Filters } from "./types";
 
 export function paramsToObject(entries: IterableIterator<[string, string]>) {

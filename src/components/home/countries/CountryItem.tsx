@@ -16,7 +16,11 @@ const CountryItem = ({ country, index }: Props) => {
           alt={country.flags.alt}
           className="w-10 h-7 xxs:w-11 xxs:h-9 sm:w-16 sm:h-12 rounded-md object-cover"
         />
-        <Link to={`/country/${country.cioc}`} className="absolute inset-0" />
+        <Link to={`/country/${country.cioc}`} className="absolute inset-0">
+          <span className="sr-only">
+            View more information about {country.name.common}
+          </span>
+        </Link>
       </td>
       <td className="table-desc">
         <p>{country.name.common}</p>

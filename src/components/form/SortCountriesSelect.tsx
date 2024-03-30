@@ -14,10 +14,13 @@ const SortCountriesSelect = () => {
   const sortValue = searchParams.get("sort");
 
   const handleSelectChange = (value: string) => {
-    setSearchParams((prevParams) => {
-      prevParams.set("sort", value);
-      return prevParams;
-    });
+    setSearchParams(
+      (prevParams) => {
+        prevParams.set("sort", value);
+        return prevParams;
+      },
+      { replace: true }
+    );
   };
 
   return (

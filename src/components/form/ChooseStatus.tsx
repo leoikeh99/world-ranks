@@ -1,6 +1,5 @@
 import "@/styles/formStyles.css";
 import { Checkbox } from "@ariakit/react";
-import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 const ChooseStatus = () => {
@@ -10,10 +9,13 @@ const ChooseStatus = () => {
     const name = event.target.name;
     const checked = event.target.checked;
 
-    setSearchParams((prevParams) => {
-      prevParams.set(name, checked ? "true" : "false");
-      return prevParams;
-    });
+    setSearchParams(
+      (prevParams) => {
+        prevParams.set(name, checked ? "true" : "false");
+        return prevParams;
+      },
+      { replace: true }
+    );
   };
 
   return (

@@ -7,7 +7,7 @@ export type Filters = {
 };
 
 export type Country = {
-  name: { common: string };
+  name: { common: string; official: string };
   flags: { svg: string; alt: string; png: string };
   region: string;
   population: number;
@@ -15,4 +15,9 @@ export type Country = {
   unMember: boolean;
   independent: boolean;
   cioc: string;
+  borders: string[];
+  languages: Record<string, string>;
+  subregion: string;
+  capital: string[];
+  currencies: Record<string, { name: string; symbol: string }>;
 };

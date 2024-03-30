@@ -10,15 +10,18 @@ const ChooseRegions = () => {
 
     const selectedRegions = searchParams.get("regions")?.split(",") || [];
 
-    setSearchParams((prevParams) => {
-      prevParams.set(
-        "regions",
-        selectedRegions.includes(name)
-          ? selectedRegions.filter((region) => region !== name).join(",")
-          : [...selectedRegions, name].join(",")
-      );
-      return prevParams;
-    });
+    setSearchParams(
+      (prevParams) => {
+        prevParams.set(
+          "regions",
+          selectedRegions.includes(name)
+            ? selectedRegions.filter((region) => region !== name).join(",")
+            : [...selectedRegions, name].join(",")
+        );
+        return prevParams;
+      },
+      { replace: true }
+    );
   };
 
   return (
