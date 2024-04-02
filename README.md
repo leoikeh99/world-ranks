@@ -27,6 +27,7 @@
 	<img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat&logo=ESLint&logoColor=white" alt="ESLint">
 	<img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat&logo=TypeScript&logoColor=white" alt="TypeScript">
 	<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white" alt="JSON">
+    <img src="https://img.shields.io/badge/TailwindCSS-38B2AC.svg?style=flat&logo=TailwindCSS&logoColor=white" alt="Tailwincss">
 </p>
 <hr>
 
