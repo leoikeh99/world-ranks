@@ -5,7 +5,7 @@
     <h1 align="center">WORLD-RANKS</h1>
 </p>
 <p align="center">
-    <em>HTTP error 401 for prompt `slogan`</em>
+    <em>Discover comprehensive information about every country worldwide.</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/leoikeh99/world-ranks?style=flat&color=0080ff" alt="license">
